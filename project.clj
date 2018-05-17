@@ -5,7 +5,8 @@
                  [re-frame "0.10.5"]
                  [secretary "1.2.3"]
                  [garden "1.3.2"]
-                 [ns-tracker "0.3.0"]]
+                 [ns-tracker "0.3.0"]
+                 [cljs-ajax "0.7.3"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-garden "0.2.8"]]

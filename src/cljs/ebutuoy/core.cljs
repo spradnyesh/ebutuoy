@@ -1,11 +1,12 @@
 (ns ebutuoy.core
   (:require [reagent.core :as reagent]
             [re-frame.core :as re-frame]
-            [ebutuoy.events :as events]
+            [ebutuoy.config :as config]
             [ebutuoy.routes :as routes]
             [ebutuoy.views :as views]
-            [ebutuoy.config :as config]))
-
+            [ebutuoy.subs]
+            [ebutuoy.events]
+            [ebutuoy.effects]))
 
 (defn dev-setup []
   (when config/debug?
@@ -19,6 +20,6 @@
 
 (defn ^:export init []
   (routes/app-routes)
-  (re-frame/dispatch-sync [::events/initialize-db])
+  (re-frame/dispatch-sync [:initialize-db])
   (dev-setup)
   (mount-root))

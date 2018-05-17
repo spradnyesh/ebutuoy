@@ -4,8 +4,7 @@
   (:require [secretary.core :as secretary]
             [goog.events :as gevents]
             [goog.history.EventType :as EventType]
-            [re-frame.core :as re-frame]
-            [ebutuoy.events :as events]))
+            [re-frame.core :as re-frame]))
 
 (defn hook-browser-navigation! []
   (doto (History.)
@@ -20,6 +19,6 @@
   ;; --------------------
   ;; define routes here
   (defroute "/" []
-    (re-frame/dispatch [::events/set-active-panel :home-panel]))
+    (re-frame/dispatch [:set-active-panel :home-panel]))
   ;; --------------------
   (hook-browser-navigation!))
