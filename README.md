@@ -1,21 +1,14 @@
 # ebutuoy
 
-A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.
+A hybrid mobile application designed as a clone of `youtube`. Currently, it
 
-## Development Mode
+- searches youtube for a query string provided by the user
+- shows search results
+- plays selected video
 
-### Start Cider from Emacs:
+It has been bundled via `cordova` to be packaged as an android/iOS app. It can trivially also be bundled as a desktop app using `electron`.
 
-Put this in your Emacs config file:
-
-```
-(setq cider-cljs-lein-repl
-	"(do (require 'figwheel-sidecar.repl-api)
-         (figwheel-sidecar.repl-api/start-figwheel!)
-         (figwheel-sidecar.repl-api/cljs-repl))")
-```
-
-Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
+## Development
 
 ### Compile css:
 
@@ -53,7 +46,6 @@ lein doo phantom test once
 The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed. However, please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many other JS environments (chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
 
 ## Production Build
-
 
 To compile clojurescript to javascript:
 
